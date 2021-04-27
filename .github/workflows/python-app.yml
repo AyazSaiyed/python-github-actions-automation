@@ -17,6 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: |
+        git config --global user.email "ayazsaiyed.mscit17@gmail.com"
+        git config --global user.name "AyazSaiyed"
         git fetch --prune --unshallow
     - name: Set up Python 3.8
       uses: actions/setup-python@v1
@@ -43,6 +45,8 @@ jobs:
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
       if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: |
+        git config --global user.email "ayazsaiyed.mscit17@gmail.com"
+        git config --global user.name "AyazSaiyed"
         git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git
         git commit -am "Last updated commit.."
         git push heroku master
