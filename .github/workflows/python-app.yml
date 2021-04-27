@@ -43,5 +43,5 @@ jobs:
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
       if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: |
-        heroku git:remote --app pure-taiga-43039
-        git push heroku HEAD:master -f
+        heroku git:remote -a pure-taiga-43039
+        git push heroku master
