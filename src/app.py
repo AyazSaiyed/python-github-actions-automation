@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Hello, world!"
+    return "welcome to the latest updated demo of python github actions"
 
 @app.route("/")
 def index2():
